@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="st.css" rel="stylesheet" />
+    <!-- Link to your external CSS file -->
+</head>
+
+<body>
+    <div class="parking-slot vacant">1</div>
+    <div class="parking-slot vacant">2</div>
+    <div class="parking-slot vacant">3</div>
+    <div class="parking-slot vacant">4</div>
+    <!-- Add more parking slots as needed -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const parkingSlots = document.querySelectorAll('.parking-slot');
+
+            parkingSlots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    if (this.classList.contains('reserved')) {
+                        this.classList.remove('reserved');
+                        this.classList.add('vacant');
+                    } else {
+                        this.classList.remove('vacant');
+                        this.classList.add('reserved');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
